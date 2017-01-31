@@ -68,11 +68,6 @@ def getQueryPositions(record_pos, flank_len, record_reference, variant_individua
 
     return (lqstart, lqend, rqstart, rqend)
 
-# father_fasta = '/Volumes/GenomeDK/00_HaplotypeAssembly/05_bwbble/datadir/1009-01/1009-01.complete.fa'
-# mother_fasta = '/Volumes/GenomeDK/00_HaplotypeAssembly/05_bwbble/datadir/1009-02/1009-02.complete.fa'
-# child_fasta = '/Volumes/GenomeDK/00_HaplotypeAssembly/05_bwbble/datadir/1009-06/1009-06.complete.fa'
-# vcfdir = '/Volumes/GenomeDK/00_HaplotypeAssembly/05_bwbble/datadir'
-
 father = [seq_record.seq for seq_record in SeqIO.parse(fileOpener(args.father_fasta), 'fasta')][0]
 mother = [seq_record.seq for seq_record in SeqIO.parse(fileOpener(args.mother_fasta), 'fasta')][0]
 child = [seq_record.seq for seq_record in SeqIO.parse(fileOpener(args.child_fasta), 'fasta')][0]
@@ -85,10 +80,6 @@ flank_len = 40
 
 if args.verbose:
     print >> sys.stderr, "Checking variants from father", len(f_positions)
-
-# fout = '/Volumes/GenomeDK/00_HaplotypeAssembly/05_bwbble/full/1009-01/1009-01.f_rc_out.txt'
-# mout = '/Volumes/GenomeDK/00_HaplotypeAssembly/05_bwbble/full/1009-02/1009-02.m_rc_out.txt'
-# cout = '/Volumes/GenomeDK/00_HaplotypeAssembly/05_bwbble/full/1009-06/1009-06.c_rc_out.txt'
 
 fout = args.father_out
 mout = args.mother_out
